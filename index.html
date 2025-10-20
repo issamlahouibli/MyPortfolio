@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISSAM LAHOUIBLI - Full Stack Developer</title>
+    
+    <link rel="icon" href="img/imggggg.jpg" type="image/png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#BCE0D1',
+                        secondary: '#242424',
+                        light: '#FFFFFF'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #BCE0D1 0%, #FFFFFF 100%);
+        }
+        .online-border {
+            border: 4px solid #22c55e; /* Tailwind's green-500 */
+            box-shadow: 0 4px 24px 0 rgba(34, 197, 94, 0.25), 0 2px 8px 0 rgba(36,36,36,0.10);
+            position: relative;
+            animation: online-glow 1.5s infinite alternate;
+        }
+        @keyframes online-glow {
+            0% {
+                box-shadow: 0 4px 24px 0 rgba(34, 197, 94, 0.25), 0 2px 8px 0 rgba(36,36,36,0.10);
+                border-color: #1b241e;
+                color:white;
+            }
+            100% {
+                box-shadow: 0 0 32px 8px rgba(34, 197, 94, 0.45), 0 2px 8px 0 rgba(36,36,36,0.10);
+                border-color: #4ffe05;
+            }
+        }
+        .online-border::after {
+            content: '';
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            width: 18px;
+            height: 18px;
+            background: #22c55e;
+            border: 3px solid #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 0 2px #22c55e;
+        }
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(36, 36, 36, 0.1);
+        }
+    </style>
+</head>
+<body class="smooth-scroll bg-light text-secondary">
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-light/90 backdrop-blur-sm shadow-sm z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold text-secondary">ISSAM LAHOUIBLI</h1>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-secondary hover:text-primary transition-colors">About</a>
+                    <a href="#skills" class="text-secondary hover:text-primary transition-colors">Skills</a>
+                    <a href="#projects" class="text-secondary hover:text-primary transition-colors">Projects</a>
+                    <a href="#contact" class="text-secondary hover:text-primary transition-colors">Contact</a>
+                </div>
+                <button id="menu-toggle" class="md:hidden text-secondary">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="#about" class="block py-2 text-secondary hover:text-primary transition-colors">About</a>
+                <a href="#skills" class="block py-2 text-secondary hover:text-primary transition-colors">Skills</a>
+                <a href="#projects" class="block py-2 text-secondary hover:text-primary transition-colors">Projects</a>
+                <a href="#contact" class="block py-2 text-secondary hover:text-primary transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen gradient-bg flex items-center justify-center pt-20 relative z-0">
+        <div class="container mx-auto px-6 text-center">
+            <div class="fade-in">
+                <!-- Photo Placeholder -->
+                <div class="w-48 h-48 mx-auto mb-8 rounded-full bg-secondary/10 flex items-center justify-center overflow-hidden online-border profile-image">
+    <!-- <i class="fas fa-user text-6xl text-secondary/30"></i> -->
+    <img src="img/imggggg.jpg" alt="ISSAM LAHOUIBLI" class="object-cover w-full h-full">
+</div>
+                <h1 class="text-5xl md:text-7xl font-bold text-secondary mb-4">ISSAM LAHOUIBLI</h1>
+                <p class="text-2xl md:text-3xl text-secondary/80 mb-8">Full Stack Developer</p>
+                <p class="text-lg md:text-xl text-secondary/70 max-w-3xl mx-auto mb-12 leading-relaxed">
+                    Experienced full-stack developer who designs and improves high-performance web solutions. 
+                    With strong analytical skills and a proactive approach, I leverage my technical expertise 
+                    to deliver efficient solutions tailored to user needs.
+                </p>
+                <div class="flex justify-center space-x-6">
+                    <a href="#contact" class="btn-primary bg-secondary text-light px-8 py-3 rounded-full font-semibold shadow-lg">
+                        <span>Contact us</span>
+                    </a>
+                    <a href="#projects" class="btn-secondary bg-secondary text-white border-2 border-secondary text-secondary px-8 py-3 rounded-full font-semibold shadow-lg">
+                        <span>View My Work</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-light relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="fade-in">
+                <h2 class="text-4xl font-bold text-center text-secondary mb-16">About Me</h2>
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-primary/20 rounded-2xl p-8 md:p-12">
+                        <p class="text-lg leading-relaxed text-secondary/80 mb-6">
+                            As an experienced full-stack developer, I specialize in designing and improving high-performance web solutions. 
+                            My strong analytical mindset and proactive approach enable me to deliver efficient, user-focused solutions 
+                            that meet specific business requirements.
+                        </p>
+                        <p class="text-lg leading-relaxed text-secondary/80">
+                            I excel at creating clear technical documentation and user guides, ensuring that complex systems 
+                            remain accessible and maintainable. My expertise spans both frontend and backend technologies, 
+                            allowing me to build comprehensive web applications from concept to deployment.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 section-gradient-1 relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="fade-in">
+                <h2 class="text-4xl font-bold text-center text-secondary mb-16">Skills & Technologies</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Frontend -->
+                    <div class="bg-light rounded-2xl p-6 skill-card shadow-md stagger-1">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-code text-4xl text-green-500 mb-4 icon-bounce"></i>
+                            <h3 class="text-xl font-bold text-secondary">Frontend</h3>
+                        </div>
+                        <ul class="space-y-2 text-secondary/70">
+                            <li>• HTML5</li>
+                            <li>• CSS3</li>
+                            <li>• JavaScript</li>
+                            <li>• React.js</li>
+                            <li>• Bootstrap</li>
+                            <li>• Tailwind CSS</li>
+                            <li>• UI/UX</li>
+                        </ul>
+                    </div>
+
+                    <!-- Backend -->
+                    <div class="bg-light rounded-2xl p-6 skill-card shadow-md stagger-2">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-server text-4xl text-purple-500 mb-4 icon-bounce"></i>
+                            <h3 class="text-xl font-bold text-secondary">Backend</h3>
+                        </div>
+                        <ul class="space-y-2 text-secondary/70">
+                            <li>• PHP</li>
+                            <li>• Laravel</li>
+                            <li>• Node.js (Basic)</li>
+                        </ul>
+                    </div>
+
+                    <!-- Database -->
+                    <div class="bg-light rounded-2xl p-6 skill-card shadow-md stagger-3">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-database text-4xl text-blue-500 mb-4 icon-bounce"></i>
+                            <h3 class="text-xl font-bold text-secondary">Database</h3>
+                        </div>
+                        <ul class="space-y-2 text-secondary/70">
+                            <li>• MySQL</li>
+                            <li>• NoSQL</li>
+                            <li>• MongoDB</li>
+                        </ul>
+                    </div>
+
+                    <!-- Tools -->
+                    <div class="bg-light rounded-2xl p-6 skill-card shadow-md stagger-4">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-tools text-4xl text-orange-500 mb-4 icon-bounce"></i>
+                            <h3 class="text-xl font-bold text-secondary">Tools & Methods</h3>
+                        </div>
+                        <ul class="space-y-2 text-secondary/70">
+                            <li>• Git & GitHub</li>
+                            <li>• VS Code</li>
+                            <li>• Postman</li>
+                            <li>• XAMPP</li>
+                            <li>• MVC</li>
+                            <li>• REST API</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-light relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="fade-in">
+                <h2 class="text-4xl font-bold text-center text-secondary mb-16">Featured Projects</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <div class="project-card bg-white rounded-2xl overflow-hidden shadow-lg">
+                        <div class="p-6">
+                            <div class="flex items-center justify-center h-48 bg-gradient-to-br from-green-100 to-green-200 rounded-lg mb-6 overflow-hidden">
+                                <img class="project-image w-full h-full object-cover rounded-lg" src="img/imag1.png" alt="Alhidaya Missour">
+                            </div>
+                            <h3 class="text-xl font-bold text-secondary mb-4">Alhidaya Missour</h3>
+                            <p class="text-secondary/70 mb-4">
+                                Complete e-commerce platform for school supplies sales with client interface and administrative dashboard.
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm bg-green-100 text-green-700 px-3 py-1 rounded-full font-semibold">E-commerce Platform</span>
+                                <a href="https://alhidayamissour.com/" class="text-secondary hover:text-green-500 transition-colors hover-glow">
+                                    <i class="fas fa-external-link-alt text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card bg-white rounded-2xl overflow-hidden shadow-lg">
+                        <div class="p-6">
+                            <div class="flex items-center justify-center h-48 bg-gradient-to-br from-purple-100 to-purple-200 rounded-lg mb-6 overflow-hidden">
+                                <img class="project-image w-full h-full object-cover rounded-lg" src="img/imag2.png" alt="Pantayz">
+                            </div>
+                            <h3 class="text-xl font-bold text-secondary mb-4">Pantayz</h3>
+                            <p class="text-secondary/70 mb-4">
+                                Complete e-commerce website for selling shorts and pants with client interface and administrative dashboard.
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm bg-purple-100 text-purple-700 px-3 py-1 rounded-full font-semibold">E-commerce Website</span>
+                                <a href="https://pantazy.wuaze.com/?i=1" class="text-secondary hover:text-purple-500 transition-colors hover-glow">
+                                    <i class="fas fa-external-link-alt text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card bg-white rounded-2xl overflow-hidden shadow-lg">
+                        <div class="p-6">
+                            <div class="flex items-center justify-center h-48 bg-gradient-to-br from-blue-100 to-blue-200 rounded-lg mb-6 overflow-hidden">
+                                <img class="project-image w-full h-full object-cover rounded-lg" src="img/imag3.png" alt="Fidni">
+                            </div>
+                            <h3 class="text-xl font-bold text-secondary mb-4">Fidni</h3>
+                            <p class="text-secondary/70 mb-4">
+                                Learning and self-assessment platform built with React.js, featuring courses and quiz evaluations.
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-semibold">Learning Platform</span>
+                                <a href="https://fidni.great-site.net/" class="text-secondary hover:text-blue-500 transition-colors hover-glow">
+                                    <i class="fas fa-external-link-alt text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ...existing code... -->
+
+<!-- Services Section -->
+<section id="services" class="py-20 bg-primary/20 relative z-10">
+    <div class="container mx-auto px-6">
+        <div class="fade-in">
+            <h2 class="text-4xl font-bold text-center text-secondary mb-16">Services</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-light rounded-2xl p-8 md:p-12 shadow-lg hover-lift">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-laptop-code text-4xl text-primary mr-4"></i>
+                        <h3 class="text-2xl font-bold text-secondary">Développement de site web</h3>
+                    </div>
+                    <p class="text-lg text-secondary/80 mb-4">
+                        Création de sites web modernes, performants et adaptés à vos besoins professionnels. 
+                        Je vous accompagne de la conception à la mise en ligne, en assurant un design responsive, une navigation fluide et une optimisation SEO.
+                    </p>
+                    <ul class="list-disc pl-6 text-secondary/70 mb-4">
+                        <li>Sites vitrines & e-commerce</li>
+                        <li>Applications web sur-mesure</li>
+                        <li>Maintenance & évolution</li>
+                        <li>Conseil et accompagnement digital</li>
+                    </ul>
+                    <div class="mt-6">
+                        <a href="https://wa.me/+212681198938?text=Start%20Project!" class="bg-primary text-secondary px-6 py-3 rounded-full font-semibold hover:bg-secondary hover:text-light transition-all">
+                           Start Project
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ...existing code... -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 gradient-bg relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="fade-in">
+                <h2 class="text-4xl font-bold text-center text-secondary mb-16">Get In Touch</h2>
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-light/80 backdrop-blur-sm rounded-2xl p-8 md:p-12">
+                        <div class="text-center mb-8">
+                            <p class="text-lg text-secondary/70">
+                                Ready to bring your ideas to life? Let's discuss your next project.
+                            </p>
+                        </div>
+                        <!-- Primary Contact Button -->
+                        <div class="text-center mb-8">
+                            <a href="https://wa.me/+212681198938?text=Hello!%20I%20would%20like%20more%20information%20please."  
+                               target="_blank"
+                               class="inline-flex items-center gap-3 bg-gradient-to-r from-green-500 to-green-600 text-white px-10 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                                <i class="fab fa-whatsapp text-3xl"></i>
+                                <span>Contact Me on WhatsApp</span>
+                            </a>
+                        </div>
+
+                        <div class="grid md:grid-cols-3 gap-8 mb-8">
+                            <!-- Email -->
+                            <div class="text-center fade-in-left">
+                                <a href="mailto:issamdevops@gmail.com" class="block">
+                                    <div class="contact-icon w-16 h-16 bg-gradient-to-br from-red-400 to-red-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                                        <i class="fas fa-envelope text-2xl text-white"></i>
+                                    </div>
+                                    <h3 class="font-bold text-secondary mb-2">Email</h3>
+                                    <p class="text-secondary/70 hover:text-red-500 transition-colors">issamdevops@gmail.com</p>
+                                </a>
+                            </div>
+
+                            <!-- LinkedIn -->
+                            <div class="text-center scale-in">
+                                <a href="https://www.linkedin.com/in/issam-devops-914960374/" target="_blank" class="block">
+                                    <div class="contact-icon w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                                        <i class="fab fa-linkedin text-2xl text-white"></i>
+                                    </div>
+                                    <h3 class="font-bold text-secondary mb-2">LinkedIn</h3>
+                                    <p class="text-secondary/70 hover:text-blue-500 transition-colors">Connect with me</p>
+                                </a>
+                            </div>
+
+                            <!-- GitHub -->
+                            <div class="text-center fade-in-right">
+                                <a href="https://github.com/issamlahouibli?tab=repositories" target="_blank" class="block">
+                                    <div class="contact-icon w-16 h-16 bg-gradient-to-br from-gray-700 to-gray-900 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                                        <i class="fab fa-github text-2xl text-white"></i>
+                                    </div>
+                                    <h3 class="font-bold text-secondary mb-2">GitHub</h3>
+                                    <p class="text-secondary/70 hover:text-blue-500 transition-colors">View my code</p>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Contact Form -->
+                        <!-- <form class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <input type="text" placeholder="Your Name" class="w-full p-4 rounded-lg border border-primary/30 focus:border-primary focus:outline-none transition-colors">
+                                </div>
+                                <div>
+                                    <input type="email" placeholder="Your Email" class="w-full p-4 rounded-lg border border-primary/30 focus:border-primary focus:outline-none transition-colors">
+                                </div>
+                            </div>
+                            <div>
+                                <input type="text" placeholder="Subject" class="w-full p-4 rounded-lg border border-primary/30 focus:border-primary focus:outline-none transition-colors">
+                            </div>
+                            <div>
+                                <textarea rows="6" placeholder="Your Message" class="w-full p-4 rounded-lg border border-primary/30 focus:border-primary focus:outline-none transition-colors resize-none"></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="bg-secondary text-light px-8 py-4 rounded-full hover:bg-secondary/90 transition-all transform hover:scale-105">
+                                    Send Message
+                                </button>
+                            </div>
+                        </form> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-light py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 ISSAM LAHOUIBLI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Scroll Progress Bar
+        window.addEventListener('scroll', () => {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollPercent = (scrollTop / scrollHeight) * 100;
+            scrollProgress.style.width = scrollPercent + '%';
+        });
+
+        // Navbar scroll effect
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .scale-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Parallax effect disabled to prevent section overlap
+        // Uncomment below if you want parallax effect
+        /*
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.gradient-bg');
+            if (parallax) {
+                parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+        */
+    </script>
+</body>
+</html>
